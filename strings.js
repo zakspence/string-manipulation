@@ -42,16 +42,27 @@ inputElement.addEventListener("keyup", function(event){
  ---------------------------------------------------------*/
 
 function reversal(string) {
-	var reversed = string.split().reverse().join('');
-	alert(reversed);
+	var reversed = string.split(' ');
+
+	//using forEach()
+	// reversed.forEach( function(item, index) {
+	// 	scoop = item.split('').reverse().join('');
+	// });
+	// console.log(scoop);
+
+	// using map()
+	reversed = reversed.map(function (word){
+		return word.split('').reverse().join('');
+	});
+
 	outputElement.innerHTML += `${reversed}<br>`;
 }
 
 function alphabits(string) {
-	var alphaSort = string.split().sort().join('');	
-	alert(alphaSort);
-	outputElement.innerHTML += `${alphaSort}<br>`;
+	var alphaSort = string.split('');	
+	alphaSort = alphaSort.sort();
 
+	outputElement.innerHTML += `${alphaSort}<br>`;
 }
 
 function palindrome(string) {
